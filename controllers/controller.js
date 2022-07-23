@@ -30,7 +30,7 @@ class Controller {
     try {
       const saleList = await Sale.findAll({
         include: [User, Product],
-        order: [["createdAt", "DESC"]],
+        order: [["productId", "ASC"]],
       });
 
       res.status(200).json({
@@ -103,12 +103,12 @@ class Controller {
       const saleId = +req.params.id;
       const saleById = await Sale.findByPk(saleId);
       // console.log(saleById.title);
-      const history = await History.create({
-        name: `Sale by ${saleById.seller}`,
-        updatedBy: req.user.name,
-        description: `${req.user.name} delete sale - ${saleById.seller}`,
-        saleId: saleId,
-      });
+      // const history = await History.create({
+      //   name: `Sale by ${saleById.seller}`,
+      //   updatedBy: req.user.name,
+      //   description: `${req.user.name} delete sale - ${saleById.seller}`,
+      //   saleId: saleId,
+      // });
 
       const delSale = await Sale.destroy({
         where: {
