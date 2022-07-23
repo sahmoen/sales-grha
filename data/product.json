@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Produk A",
+    "price": 200000
+  },
+  {
+    "title": "Produk B",
+    "price": 100000
+  },
+  {
+    "title": "Produk C",
+    "price": 250000
+  },
+  {
+    "title": "Produk D",
+    "price": 150000
+  },
+  {
+    "title": "Produk E",
+    "price": 300000
+  }
+]
